@@ -1,0 +1,432 @@
+/* ==========================================================================
+   PORTAL LOGÍSTICO PREMIUM - UI/UX MODERN & INDUSTRIAL (SISTEMA UNIFICADO)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg-main: #f8fafc;
+    --bg-card: #ffffff;
+    --brand-primary: #0f172a;    /* Slate 900 - Lujo Industrial */
+    --brand-accent: #2563eb;     /* Azul Eléctrico Moderno */
+    --brand-success: #10b981;    /* Verde Esmeralda */
+    --text-title: #0f172a;
+    --text-body: #334155;
+    --text-muted: #94a3b8;
+    --border-modern: #e2e8f0;
+    --radius-lg: 12px;
+    --radius-md: 8px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+    --shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-body);
+    line-height: 1.5;
+    padding-bottom: 60px;
+}
+
+/* --- COMPONENTE: NAVBAr --- */
+.navbar {
+    background: var(--brand-primary);
+    color: #ffffff;
+    padding: 18px 24px;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 40px;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.navbar .logo span {
+    color: var(--brand-accent);
+}
+
+.badge-role {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 6px 14px;
+    border-radius: 30px;
+    letter-spacing: 0.5px;
+}
+
+/* --- ESTRUCTURA DE CONTENEDORES --- */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Contenedor expandido específico para Tablas de Control de Empresa y Recepción */
+.container-wide {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- COMPONENTE: TARJETAS (CARDS) --- */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-modern);
+    border-radius: var(--radius-lg);
+    padding: 35px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-lg);
+}
+
+.card-header {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.card-header h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-title);
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+
+.card-header p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.section-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-title);
+    margin: 25px 0 12px 0;
+    letter-spacing: 1px;
+}
+
+/* --- FORMULARIOS --- */
+.form-group {
+    margin-bottom: 24px;
+}
+
+label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--brand-primary);
+}
+
+input[type="text"], input[type="time"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    color: var(--text-body);
+    background-color: #ffffff;
+    box-shadow: var(--shadow-sm);
+    outline: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input[type="text"]:focus, input[type="time"]:focus {
+    border-color: var(--brand-accent);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+/* --- TARJETAS INTERACTIVAS (MÓDULO CLIENTE) --- */
+.checkbox-tile {
+    display: flex;
+    align-items: center;
+    padding: 18px 22px;
+    background: #ffffff;
+    border: 1px solid var(--border-modern);
+    border-radius: var(--radius-md);
+    margin-bottom: 12px;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.checkbox-tile:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.checkbox-tile.selected {
+    border-color: var(--brand-accent);
+    background-color: rgba(37, 99, 235, 0.03);
+    box-shadow: 0 0 0 1px var(--brand-accent);
+}
+
+.tile-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.order-id { font-weight: 700; color: var(--brand-primary); font-size: 0.95rem; }
+.order-desc { color: var(--text-body); font-size: 0.95rem; font-weight: 500; }
+
+/* --- BOTONES MODERNOS --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--brand-primary);
+    color: #ffffff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.btn:hover {
+    opacity: 0.95;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+.btn-block { width: 100%; display: flex; }
+.btn-secondary { background: #e2e8f0; color: #475569; box-shadow: none; }
+.btn-secondary:hover { background: #cbd5e1; box-shadow: none; transform: none; }
+.btn-success { background: var(--brand-accent); }
+.btn-success:hover { background: #1d4ed8; }
+
+/* Botones de acción incrustados en las filas de las tablas */
+.btn-action-table {
+    background: var(--brand-success);
+    color: #ffffff;
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    box-shadow: none;
+    position: relative; /* Asegura que el botón esté por encima de la fila */
+    z-index: 10;
+    cursor: pointer;
+}
+.btn-action-table:hover {
+    background: #059669; /* Verde un poco más oscuro al pasar el cursor */
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.2);
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 0.8rem;
+    margin-top: 8px;
+    font-weight: 500;
+    display: none;
+}
+
+/* --- ENFOQUE: CUADRO DE MANDO / DASHBOARD (EMPRESA Y RECEPCIÓN) --- */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.dashboard-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--brand-primary);
+}
+
+/* Indicador de estado Live Sync */
+.status-indicator {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-body);
+    background: #ffffff;
+    padding: 8px 16px;
+    border-radius: 50px;
+    border: 1px solid var(--border-modern);
+    box-shadow: var(--shadow-sm);
+}
+
+.dot-live {
+    width: 8px;
+    height: 8px;
+    background-color: var(--brand-success);
+    border-radius: 50%;
+    margin-right: 10px;
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.9); opacity: 0.4; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { transform: scale(1.1); opacity: 1; box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+    100% { transform: scale(0.9); opacity: 0.4; }
+}
+
+/* Estilos de las Tablas Industriales */
+.table-container {
+    background: #ffffff;
+    border: 1px solid var(--border-modern);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    margin-top: 15px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.data-table th {
+    background: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-modern);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.data-table td {
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--border-modern);
+    color: var(--text-body);
+    vertical-align: middle;
+}
+
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover { background: #f8fafc; }
+
+/* Badges de Estado de Órdenes */
+.badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+.badge-pending { background: #fef3c7; color: #d97706; }
+.badge-ready { background: #dcfce7; color: #15803d; }
+
+/* --- ANIMACIONES --- */
+.fade-in {
+    animation: fadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   OPTIMIZACIÓN RESPONSIVA Y SOPORTE MÓVIL (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Por defecto, las tarjetas de celular están ocultas en pantallas grandes */
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    /* Ocultar las tablas rígidas de escritorio */
+    .desktop-only {
+        display: none !important;
+    }
+
+    /* Mostrar las tarjetas adaptadas para celular */
+    .mobile-only {
+        display: block;
+    }
+
+    /* Modificaciones al contenedor principal */
+    .container-wide {
+        padding: 0 12px;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .status-indicator {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Diseño Premium de las Tarjetas Operativas para Celular */
+    .mobile-order-card {
+        background: #ffffff;
+        border: 1px solid var(--border-modern);
+        border-radius: var(--radius-lg);
+        padding: 20px;
+        margin-bottom: 16px;
+        box-shadow: var(--shadow-md);
+    }
+
+    .mobile-card-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        padding-bottom: 8px;
+        border-bottom: 1px dashed #f1f5f9;
+    }
+
+    .mobile-card-row:last-of-type {
+        border-bottom: none;
+        margin-bottom: 15px;
+    }
+
+    /* Botones táctiles de gran tamaño para el dedo */
+    .btn-mobile-full {
+        width: 100%;
+        padding: 14px;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: var(--radius-md);
+        text-align: center;
+    }
+    
+    /* Optimización del Canvas de Firma para que no se desborde del celular */
+    #signature-canvas {
+        display: block;
+        max-width: 100%;
+        height: 220px;
+        background: #ffffff;
+        touch-action: none; /* Bloquea el scroll del navegador solo sobre el lienzo al firmar */
+    }
+}
